@@ -15,15 +15,5 @@ test('incorrect email', async ({ page }) => {
     await page.getByLabel('password').fill('O64ro%OaDFAMnkBZ');
     await page.getByLabel('Log In').click();
 
-    expect('Wrong email or password.').toEqual(expect.stringContaining('Wrong email or password.'));
-});
-
-// Test using incorrect password
-test('incorrect password', async ({ page }) => {
-    await page.getByLabel('email').fill('phrasee03@gmail.com');
-    await page.getByLabel('password').fill('O64ro%OaDFAMnk');
-    await page.getByLabel('Log In').click();
-    
-    expect('Wrong email or password.').toEqual(expect.stringContaining('Wrong email or password.'));
-    
+    await expect(page).toHaveTitle(/Home | Phrasee/)
 });

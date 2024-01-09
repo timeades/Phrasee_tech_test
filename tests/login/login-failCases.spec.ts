@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { baseUrl } from '../utils/constants/url.ts';
+import { baseUrl } from '../../utils/constants/url.ts';
 
 test.beforeEach(async ({ page }) => {
     await page.goto(baseUrl + '/login');

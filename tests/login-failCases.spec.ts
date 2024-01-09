@@ -1,8 +1,9 @@
 import { test, expect } from '@playwright/test';
+import { baseUrl } from '../utils/constants/url.ts';
 
 test.beforeEach(async ({ page }) => {
-    await page.goto('https://app-qa.phrasee.co');
-  });
+    await page.goto(baseUrl + '/login');
+});
 
   // Testing we have landed on the correct page
 test('hasTitle', async ({ page }) => {
@@ -25,5 +26,5 @@ test('incorrect password', async ({ page }) => {
     await page.getByLabel('Log In').click();
     
     expect('Wrong email or password.').toEqual(expect.stringContaining('Wrong email or password.'));
-    
+
 });

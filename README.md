@@ -11,38 +11,46 @@ Test cases to test the functionality:
 * Language - TypeScript
 
 # Setup
-* If you don't have npm already install you will need to run the terminal command:
+If you don't have npm already install you will need to run the terminal command:
     ```
     npm install -g npm
     ```
-* You will then need to install the project dependencies:
+You will then need to install the project dependencies:
     ```
     npm i
     ```
 
 # Running the tests
-To run all the tests use the commands: 
+To run all the tests in headless mode use the commands: 
 
 ```
 npx playwright test
 ```
-or if you would like to see the test results in terminal rather than running the reporter seperatley use the command: 
+for headed mode you can run the command
 
 ```
-npx playwright test --reporter=list
+npx playwright test --headed
 ```
+
 to run single tests you can add the test name to the command e.g.
 
 ```
-npx playwright test loginPage-functional.spec.ts
+npx playwright test experiment.spec.ts
+
+or
+
+npx playwright test --headed experiment.spec.ts
 ```
-or 
+
+Playwright also has a handy debug mode that can be called with the command
 
 ```
-npx playwright test loginPage-functional.spec.ts --reporter=list
+npx playwright test --ui
 ```
 
-The current configuration of the run file runs the tests against desktop browsers: Chromium, Firefox & Safari. They are also run against mobile web browsers Chrome emulating a Pixel 5 and  Galaxy S III along with Safari emulating an iPhone 12 & iPhone 6. These are set in playwright.config.ts and use the devTools configurations in Chrome for devices.
+The current configuration of the run file runs the tests against desktop browser: Chrome and a mobile device iPhone 12. These are set in playwright.config.ts and use the devTools configurations in Chrome for devices so if you want to run the tests in other browsers go to the config file and uncomment the required ones.
+
+![Image of the browser settings in config file](/utils/assets/Screenshot%202024-01-10%20at%2013.23.11.png)
 
 # Viewing the test results
 Once the tests are run you can view the results running the command: 

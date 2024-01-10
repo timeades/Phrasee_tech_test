@@ -13,18 +13,20 @@ import {
 } from '../../utils/components/experiments';
 
 test.beforeEach(async ({ page }) => {
+  // call the login function in login.ts
   await login(page);
   await expect(page).toHaveTitle(/Home | Phrasee/);
 });
 
 test('createNewExperiment', async ({ page }) => {
+    // Click create nav item to go to new experiment form
     await page.click(newExperiment);
     await page.getByRole('menuitem', { name: 'experiment' }).click();
     await expect(page).toHaveTitle(/Create Experiment | Phrasee/);
 
     // Give the experiment a name
     await page.click(experimentName);
-    await page.fill(experimentName, 'Test experiment TE');
+    await page.fill(experimentName, 'TE Test 1');
     await page.keyboard.press('Enter');
 
     // Select email experiment

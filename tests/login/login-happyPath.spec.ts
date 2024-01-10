@@ -12,7 +12,7 @@ test('hasTitle', async ({ page }) => {
 
 // Test writing to the correct fields for username & password
 test('login', async ({ page }) => {
-    //await expect(page.getByLabel('email')).toBeVisible();
+    // as stated in login.ts this is bad practice and should not be used
     await page.getByLabel('email').fill('phrasee03@gmail.com');
     await page.getByLabel('password').fill('O64ro%OaDFAMnkBZ');
     await page.getByLabel('Log In').click();

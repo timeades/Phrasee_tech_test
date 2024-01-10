@@ -65,7 +65,7 @@ test('createExperimentWithDiscoutOffProduct', async ({ page }) => {
     await page.getByPlaceholder('E.g. \'10\'').fill('15');
     await page.getByRole('button', { name: 'Yes' }).click();
 
-    // Following 3 selectors used need to be refactored to be more specific
+    // TBD following 3 selectors used need to be refactored to be more specific
     // Select a specific catagory
     await page.locator('.mb-4 > .ant-row > div:nth-child(2) > .ant-form-item-control > .ant-form-item-children > .ant-select > .ant-select-selection > .ant-select-selection__rendered').first().click();
     await page.getByRole('option', { name: 'Outerwear' }).click();

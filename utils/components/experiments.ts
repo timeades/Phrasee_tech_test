@@ -12,3 +12,4 @@ export const campaignTypeDropdown = '[class="ant-select-selection__rendered"]';
 export const campaignTypeDiscount = '[data-cy="Discount"]';
 export const campaignDiscountPercentage = '[data-cy="text_percentage"]';
 export const brandName = '[data-cy="data-cy="text_short"]';
+export const testSubjectLine = '[data-cy="lng-approval-variant-text-0"]';

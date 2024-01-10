@@ -6,12 +6,12 @@ test.beforeEach(async ({ page }) => {
 });
 
   // Testing we have landed on the correct page
-test('hasTitle', async ({ page }) => {
+test('onLoginPage', async ({ page }) => {
     await expect(page).toHaveTitle(/Login | Phrasee/)
 })
 
 // test using incorrect email address
-test('incorrect email', async ({ page }) => {
+test('incorrectEmail', async ({ page }) => {
     await page.getByLabel('email').fill('foo@bar.com');
     //again, this is bad practice and should not be used
     await page.getByLabel('password').fill('O64ro%OaDFAMnkBZ');
@@ -21,7 +21,7 @@ test('incorrect email', async ({ page }) => {
 });
 
 // Test using incorrect password
-test('incorrect password', async ({ page }) => {
+test('incorrectPassword', async ({ page }) => {
     //again, this is bad practice and should not be used
     await page.getByLabel('email').fill('phrasee03@gmail.com');
     await page.getByLabel('password').fill('foobar');

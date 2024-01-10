@@ -10,6 +10,7 @@ import {
     nextButton,
     sendDate,
     campaignTypeDropdown,
+    testSubjectLine,
 } from '../../utils/components/experiments';
 
 test.beforeEach(async ({ page }) => {
@@ -18,7 +19,7 @@ test.beforeEach(async ({ page }) => {
   await expect(page).toHaveTitle(/Home | Phrasee/);
 });
 
-test('createNewExperiment', async ({ page }) => {
+test('experimentWithRequiredFieldsOnly', async ({ page }) => {
     // Click create nav item to go to new experiment form
     await page.click(newExperiment);
     await page.getByRole('menuitem', { name: 'experiment' }).click();
@@ -62,4 +63,7 @@ test('createNewExperiment', async ({ page }) => {
     // Click next
     await page.click(nextButton);
 
+    // Check that the experiment has been created
+    await expect(page.locator('h2')).toContainText("Phrasee's optimal set for testing:")
+    await expect(page.locator(testSubjectLine)).toContainText("Test subject line")
 });

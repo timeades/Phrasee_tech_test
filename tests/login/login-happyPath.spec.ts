@@ -6,12 +6,12 @@ test.beforeEach(async ({ page }) => {
 });
 
   // Testing we have landed on the correct page
-test('hasTitle', async ({ page }) => {
+test('onLoginPage', async ({ page }) => {
     await expect(page).toHaveTitle(/Login | Phrasee/)
 })
 
 // Test writing to the correct fields for username & password
-test('login', async ({ page }) => {
+test('happyPathLogin', async ({ page }) => {
     // as stated in login.ts this is bad practice and should not be used
     await page.getByLabel('email').fill('phrasee03@gmail.com');
     await page.getByLabel('password').fill('O64ro%OaDFAMnkBZ');

@@ -4,7 +4,10 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config()
+require('dotenv').config();
+
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
 
 /**
  * See https://playwright.dev/docs/test-configuration.

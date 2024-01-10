@@ -6,7 +6,8 @@ import {
     emailExperiment,
     subjectLine,
     campaignNumber,
-    percentageTarget, 
+    percentageTarget,
+    nextButton, 
 } from '../../utils/components/experiments';
 
 test.beforeEach(async ({ page }) => {

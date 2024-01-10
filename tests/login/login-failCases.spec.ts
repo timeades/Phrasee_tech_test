@@ -12,7 +12,8 @@ test('hasTitle', async ({ page }) => {
 
 // test using incorrect email address
 test('incorrect email', async ({ page }) => {
-    await page.getByLabel('email').fill('phrasee03@gmail.corn');
+    await page.getByLabel('email').fill('foo@bar.com');
+    //again, this is bad practice and should not be used
     await page.getByLabel('password').fill('O64ro%OaDFAMnkBZ');
     await page.getByLabel('Log In').click();
 
@@ -21,8 +22,9 @@ test('incorrect email', async ({ page }) => {
 
 // Test using incorrect password
 test('incorrect password', async ({ page }) => {
+    //again, this is bad practice and should not be used
     await page.getByLabel('email').fill('phrasee03@gmail.com');
-    await page.getByLabel('password').fill('O64ro%OaDFAMnk');
+    await page.getByLabel('password').fill('foobar');
     await page.getByLabel('Log In').click();
     
     expect('Wrong email or password.').toEqual(expect.stringContaining('Wrong email or password.'));

@@ -71,4 +71,4 @@ you can see the html results:
 
 ![html test results](/utils/assets/htmlReport.png)
 
-There other formats are available for example JSON, JUnit, Blob, etc and these can be configured in the config file. You can also use custom reporters or third party ones such as [Allure](https://github.com/allure-framework/), [Monocart](https://cenfun.github.io/monocart-reporter/) 
+There are other formats are available, for example JSON, JUnit, Blob, etc and these can be configured in the config file. You can also use custom reporters or third party ones such as [Allure](https://github.com/allure-framework/), [Monocart](https://cenfun.github.io/monocart-reporter/) 

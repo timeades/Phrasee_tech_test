@@ -47,7 +47,7 @@ npx playwright test --headed experiment.spec.ts
 Playwright also has a handy debug mode that can be called with the command
 
 ```
-npx playwright test --ui
+npx playwright test experiment.spec.ts --debug
 ```
 
 The current configuration of the run file runs the tests against desktop browser: Chrome. These are set in playwright.config.ts and use the devTools configurations in Chrome for devices so if you want to run the tests in other browsers go to the config file and uncomment the required ones or add new devices.

@@ -1,3 +1,7 @@
+/* 
+To make the test code cleaner and more readable, we can store the selectors in a separate file.
+*/
+
 export const newExperiment = '[data-cy="nav-create-menu-button"]';
 export const experimentName = '[data-cy="campaign-name-input"]';
 export const emailExperiment = '[data-cy="email"]';

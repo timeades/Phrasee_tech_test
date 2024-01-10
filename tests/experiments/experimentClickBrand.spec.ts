@@ -43,9 +43,6 @@ test('experimentWithClickAndBrand', async ({ page }) => {
     // Fill in percentage target
     await page.getByPlaceholder('E.g.').click();
     await page.getByPlaceholder('E.g.').fill('1%0');
-    // doesn't like these selectors, need to investigate why: 
-    // await page.click(campaingClickRate);
-    // await page.fill(campaingClickRate, '10');
 
     // Click next
     await page.click(nextButton);
@@ -61,14 +58,12 @@ test('experimentWithClickAndBrand', async ({ page }) => {
     await page.click(campaignTypeDropdown);
     await page.getByRole('option', { name: 'Brand', exact: true }).click();
     await page.getByPlaceholder('E.g. Besty').click();
-    // another selector that needs investigation: 
-    // page.click(brandName);
     await page.getByPlaceholder('E.g. Besty').fill('Besty');
 
     // Click next
     await page.click(nextButton);
 
-        // Check that the experiment has been created
-        await expect(page.locator('h2')).toContainText("Phrasee's optimal set for testing:")
-        await expect(page.locator(testSubjectLine)).toContainText("Test with click rate and Brand")
+    // Check that the experiment has been created
+    await expect(page.locator('h2')).toContainText("Phrasee's optimal set for testing:")
+    await expect(page.locator(testSubjectLine)).toContainText("Test with click rate and Brand")
 });

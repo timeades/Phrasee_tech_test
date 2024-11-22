@@ -7,7 +7,7 @@ test.beforeEach(async ({ page }) => {
 
   // Testing we have landed on the correct page
 test('onLoginPage', async ({ page }) => {
-    await expect(page).toHaveTitle(/Login | Phrasee/)
+    await expect(page).toHaveTitle(/Login | Jacquard/)
 })
 
 // test using incorrect email address

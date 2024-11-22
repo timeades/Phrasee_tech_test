@@ -16,14 +16,14 @@ import {
 test.beforeEach(async ({ page }) => {
 // call the login function in login.ts
   await login(page);
-  await expect(page).toHaveTitle(/Home | Phrasee/);
+  await expect(page).toHaveTitle(/Home | Jacquard/);
 });
 
 test('createExperimentWithDiscoutOffProduct', async ({ page }) => {
     // Click create nav item to go to new experiment form
     await page.click(newExperiment);
     await page.getByRole('menuitem', { name: 'experiment' }).click();
-    await expect(page).toHaveTitle(/Create Experiment | Phrasee/);
+    await expect(page).toHaveTitle(/Create Experiment | Jacquard/);
 
     // Give the experiment a name
     await page.click(experimentName);

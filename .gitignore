@@ -5,3 +5,5 @@ node_modules/
 /playwright/.cache/
 .ds
 .DS_Store
+.env
+.env.local

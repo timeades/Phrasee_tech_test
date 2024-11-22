@@ -10,11 +10,11 @@ export const login = async (page: any) => {
 
   await page.goto(`${baseUrl}/login`);
 
-  expect(page).toHaveTitle(/Login | Phrasee/);
+  expect(page).toHaveTitle(/Login | Jacquard/);
 
   await page.fill('input[name="email"]', `${process.env.USERNAME}`);
   await page.fill('input[name="password"]',`${process.env.PASSWORD}`);
   await page.click('button[type="submit"]');
 
-  await expect(page).toHaveTitle(/Home | Phrasee/);
+  await expect(page).toHaveTitle(/Home | Jacquard/);
 };
